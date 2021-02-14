@@ -23,9 +23,101 @@ Retrieve data from database and display it in a dynamic webpage.
 Publish the website in the given URL.
 
 ## PROGRAM:
+```
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body>
+    <div class="container-fluid text-center bg p-5">
+        <h1 class="display-1" style="padding-top: 65px; color: black;">TITAN COMPANY</h1>
+    </div>
+    <div class="bg1">
+        <nav class="navbar navbar-expand-lg  bg2">
+            <a class="navbar-brand" href="#" style="color: black;">Navbar</a>
+            
+            <div id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-link active" style="color: black;" href="#" >Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" style="color: black;" href="/people">people</a>
+                <a class="nav-link" style="color: black;" href="/contact">contact</a>
+              </div>
+            </div>
+          </nav>
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3 class="display-4">Our premium Products</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row p-5">
+                <div class="col-sm-4 p-4 text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBSH1gQ9FxKUK4HpMCGjJ96G3XAoVxfjHWww&usqp=CAU"  alt="product image">
+                </div>
+                <div class="col-sm-4 p-4 text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPQXqFi2R9J2Qtga6TlLyQXD2N5M4w8uboA&usqp=CAU"  alt="product image">
+                </div>
+                <div class="col-sm-4 p-4 text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4NyT0JXFVASvephIIRaU1VRm9qeK9CAGDpA&usqp=CAU"  alt="product image">
+                </div>
+                <div class="col-sm-4 p-4 text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCPQXqFi2R9J2Qtga6TlLyQXD2N5M4w8uboA&usqp=CAU"  alt="product image">
+                </div>
+                <div class="col-sm-4 p-4 text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-0HP7XHMzV_wfyUjkk0z8GltwlEPhQSNrMQ&usqp=CAU"  alt="product image">
+                </div>
+                <div class="col-sm-4 p-4 text-center">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStvpAGt_Qf1zOgprOob_KS7Seaw57m82n5Bg&usqp=CAU"  alt="product image">
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- Site footer -->
+      <footer class="site-footer bg3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+                <br>
+              <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by Titan ltd.
+              </p>
+            </div>
+          </div>
+        </div>
+  </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</html>
+```
+### views.py
+```
+from django.shortcuts import render
 
+# Create your views here.
 
+def home(request):
+    context = {}
+    return render(request, 'responsiveapp/responsive.html', context)
+
+def people(request):
+    context = {}
+    return render(request, 'responsiveapp/people.html', context)
+
+def contact(request):
+    context = {}
+    return render(request, 'responsiveapp/contact.html', context)
+```
 ## OUTPUT:
+![output](./static/img/Screenshot(167).jpg)
 
+![output](./static/img/Screenshot(171).jpg)
 
 ## RESULT:
